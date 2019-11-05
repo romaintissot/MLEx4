@@ -97,16 +97,9 @@ delta2=sigma3'*A2;
 delta1=sigma2'*A1;
 
 
-Theta1_grad = delta1/m;
-Theta2_grad = delta2/m;
+Theta1_grad = delta1/m+(lambda*[zeros(size(Theta1,1),1) Theta1(:,2:end)])/m;
+Theta2_grad = delta2/m+(lambda*[zeros(size(Theta2,1),1) Theta2(:,2:end)])/m;
 %grad = (1/m)*(X'*(h-y)+lambda*theta_reg);
-
-
-
-
-
-
-
 
 
 % -------------------------------------------------------------
